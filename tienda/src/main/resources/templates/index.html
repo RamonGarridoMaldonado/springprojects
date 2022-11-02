@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="commons/header :: header">
+</head>
+<body>
+<div th:replace="commons/menu :: menu">
+<nav class="navbar navbar-expand-lg bg-light">
+<div class="container-fluid">
+<a class="navbar-brand" href="#">Menu</a>
+<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+<span class="navbar-toggler-icon"></span>
+</button>
+<div class="collapse navbar-collapse" id="navbarSupportedContent">
+<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+<li class="nav-item">
+<a class="nav-link active" aria-current="page" th:href="@{/}" href="index.html">Home</a>
+</li>
+<li class="nav-item">
+<a class="nav-link" th:href="@{/productos/list}" href="productos/list.html">Productos</a>
+</li>
+</ul>
+</div>
+</nav>
+</div>
+
+<main>
+<div class="container py-4">
+<div class="row align-items-md-stretch">
+<div class="col-md-6">
+<div class="h-100 p-5 text-bg-dark rounded-3">
+<h2>Change the background</h2>
+<p>Swap the background-color utility and add a `.text-*` color utility to mix up the jumbotron look. Then, mix and match with additional component themes and more.</p>
+<button class="btn btn-outline-light" type="button">Example button</button>
+</div>
+</div>
+<div class="col-md-6">
+<div class="h-100 p-5 bg-light border rounded-3">
+<h2>Add borders</h2>
+<p>Or, keep it light and add a border for some added definition to the boundaries of your content. Be sure to look under the hood at the source HTML here as we've adjusted the alignment and sizing of both column's content for equal-height.</p>
+<button class="btn btn-outline-secondary" type="button">Example button</button>
+</div>
+</div>
+</div>
+</div>
+</main>
+
+<div th:replace="commons/footer :: footer" class="container">Footer</div>
+
+</body>
+</html>
