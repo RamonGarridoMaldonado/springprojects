@@ -26,6 +26,12 @@ public class ProductoController {
         return modelAndView;
     }
 
+    @GetMapping(value = "/inicio")
+    public String inicio(Model model) {
+        model.addAttribute("productos", getProductos());
+        return "list";
+    }
+
     @RequestMapping(value = "/edit")
     public ModelAndView edit(
         @RequestParam(name="codigo",required = true) int codigo

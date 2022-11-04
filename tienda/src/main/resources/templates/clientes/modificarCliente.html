@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head th:replace="commons/header :: header" />
+<body>
+    <style>
+        form {
+            width: 20em;
+            margin-left: 2em;
+            margin-top: .8em;
+        }
+        #divCheck, #botonEnviar {
+            margin-top: .5em;
+        }
+    </style>
+    <form>
+        <div class="mb-6">
+            <label for="codigo" class="form-label">Codigo</label>
+            <input type="text" class="form-control" id="codigo" name="cliente" th:value="${cliente.codigo}">
+        </div>
+        <div class="mb-6">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombre" name="cliente" th:value="${cliente.nombre}">
+        </div>
+        <div class="mb-6">
+            <label for="apellidos" class="form-label">Apellidos</label>
+            <input type="text" class="form-control" id="apellidos" name="cliente" th:value="${cliente.apellidos}">
+        </div>
+        <div class="mb-6">
+            <label for="email" class="form-label">Correo Electronico</label>
+            <input type="email" class="form-control" id="email" name="cliente" th:value="${cliente.email}">
+        </div>
+        <div class="mb-6">
+            <label for="dni" class="form-label">DNI</label>
+            <input type="email" class="form-control" id="dni" name="cliente" th:value="${cliente.dni}" readonly>
+        </div>
+        <div class="mb-6">
+            <label for="telefono" class="form-label">Telefono</label>
+            <input type="tel" class="form-control" id="telefono" name="cliente" th:value="${cliente.telefono}">
+        </div>
+        <div class="mb-6">
+            <label for="direccion" class="form-label">Direccion</label>
+            <input type="tel" class="form-control" id="direccion" name="cliente" th:value="${cliente.direccion}">
+        </div>
+        <div class="mb-6" id="divCheck">
+            <input type="checkbox">
+            <label for="direccion" th:checked="${cliente.vip}">¿Es cliente VIP?</label>
+        </div>
+        <div> 
+            <input type="submit" value="Agregar nuevo cliente" id="botonEnviar">
+        </div>
+    </form>
+</body>
+</html>
