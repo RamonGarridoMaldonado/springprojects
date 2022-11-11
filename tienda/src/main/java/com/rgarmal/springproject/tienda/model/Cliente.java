@@ -11,6 +11,10 @@ public class Cliente {
     private String direccion;
     private boolean vip;
     
+    public Cliente() {
+        
+    }
+
     public Cliente(int codigo, String nombre, String apellidos, String email, String dni, String telefono,
             String direccion, boolean vip) {
         this.codigo = codigo;

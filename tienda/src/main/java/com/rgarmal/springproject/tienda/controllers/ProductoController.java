@@ -15,7 +15,7 @@ import java.util.*;
 import com.rgarmal.springproject.tienda.model.Producto;
 
 @Controller
-@RequestMapping("/productos")
+@RequestMapping("productos")
 public class ProductoController {
     
     @RequestMapping(value = "/list")

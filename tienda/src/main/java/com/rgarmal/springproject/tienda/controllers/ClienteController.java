@@ -18,7 +18,7 @@ import java.util.*;
 import com.rgarmal.springproject.tienda.model.Cliente;
 
 @Controller
-@RequestMapping("/clientes")
+@RequestMapping("clientes")
 public class ClienteController {
     
     @RequestMapping(value = "/listaClientes")
@@ -39,6 +39,17 @@ public class ClienteController {
         return modelAndView;
     }
 
+    @PostMapping(value = "/editCliente")
+    public ModelAndView editCliente(Cliente cliente) {
+        ModelAndView modelAndView = new ModelAndView();
+        List clientes = getClientes();
+        int indexOf = clientes.indexOf(cliente);
+        clientes.set(indexOf,cliente);
+        modelAndView.addObject("clientes", clientes);
+        modelAndView.setViewName("clientes/listaClientes");
+        return modelAndView;
+    }
+
     @RequestMapping(value = {"/nuevoCliente"} )
     public ModelAndView nuevo() {
         ModelAndView modelAndView = new ModelAndView();
@@ -46,26 +57,25 @@ public class ClienteController {
         return modelAndView;
     }
 
-    @PostMapping(path = "/newCliente")
-    @ResponseBody
-    public ModelAndView saveCliente(String codigo, String nombre, String apellidos, String email, String dni, String telefono, String direccion, String vip) {
+    @PostMapping(value = "/newCliente")
+    public ModelAndView saveCliente(Cliente cliente) {
         ModelAndView modelAndView = new ModelAndView();
         List clientes = getClientes();
-        clientes.add(new Cliente(Integer.parseInt(codigo),nombre,apellidos,email,dni,telefono,direccion,Boolean.parseBoolean(vip)));
+        clientes.add(cliente);
         modelAndView.addObject("clientes", clientes);
         modelAndView.setViewName("clientes/listaClientes");
         return modelAndView;
     }
 
 
-    @RequestMapping(value = {"/borrarCliente"})
+    @RequestMapping(value = "/borrarCliente")
     public ModelAndView delete(
         @RequestParam(name="codigo",required = true) int codigo
     ) {
         List<Cliente> clientes = getClientes();
         clientes.remove(new Cliente(codigo));
         ModelAndView modelAndView = new ModelAndView();
-        modelAndView.addObject("cliente",clientes);
+        modelAndView.addObject("clientes",clientes);
         modelAndView.setViewName("clientes/listaClientes");
         return modelAndView;
     }
@@ -76,7 +86,6 @@ public class ClienteController {
         
         return clientes.get(indexOf);
     }
-
 
     private List<Cliente> getClientes() {
         ArrayList<Cliente> clientes = new ArrayList<Cliente>();
