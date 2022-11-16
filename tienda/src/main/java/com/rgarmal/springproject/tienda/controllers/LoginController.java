@@ -1,6 +1,8 @@
 package com.rgarmal.springproject.tienda.controllers;
 import java.util.ArrayList;
 
+import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 import javax.websocket.server.PathParam;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -33,11 +35,19 @@ public class LoginController {
         return "signin";
     }
 
-    @RequestMapping(value = {"/wellcome"} )
-    public ModelAndView guardarUsuario(LoginUsuario usuario) {
+    @GetMapping(value = {"/wellcome"}) 
+        public String welcome() {
+            return "login/wellcome";
+        }
+
+    @PostMapping(value = {"/wellcome"} )
+    public ModelAndView guardarUsuario(Model model,LoginUsuario usuario, HttpSession session) {
+
+        session.setAttribute("usuario", usuario);
         ModelAndView modelAndView = new ModelAndView();
         String mensaje = messageSource.getMessage("saludar.usuario", new String[]{usuario.getUsuario()}, LocaleContextHolder.getLocale());
         modelAndView.addObject("User", mensaje);
+        model.addAttribute("usuario", usuario.getUsuario());
         modelAndView.setViewName("login/wellcome");
         return modelAndView;
     }

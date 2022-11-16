@@ -19,7 +19,10 @@
           <a class="nav-link" th:href="@{/productos/list}" href="productos.html" th:text="#{menu.productos}"></a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" th:href="@{/productos/list}" href="productos.html" th:text="#{menu.clientes}"></a>
+          <a class="nav-link" th:href="@{/clientes/listaClientes}" href="listaClientes.html" th:text="#{menu.clientes}"></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" th:href="@{/proveedores/listaProveedores}" href="listaProveedores.html" th:text="#{menu.proveedores}"></a>
         </li>
         <li class="nav-item">
           <a class="nav-link" th:href="@{/productos/list}" href="productos.html" th:text="#{menu.mapa}"></a>
@@ -37,9 +40,6 @@
           </ul>
         </li>
       -->
-        <li class="nav-item">
-          <a class="nav-link disabled">Disabled</a>
-        </li>
       </ul>
 
       <!--Idioma-->
@@ -51,9 +51,9 @@
   <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">&#127760;
      </a>
         <div class="dropdown-menu">
-          <a class="dropdown-item" th:href="@{/login/welcome?lang_config=es}" href="#" th:text="#{menu.idioma.espanol}"></a>
-          <a class="dropdown-item" th:href="@{/login/welcome?lang_config=en}" href="#" th:text="#{menu.idioma.ingles}"></a>
-          <a class="dropdown-item" th:href="@{/login/welcome?lang_config=fr}" href="#" th:text="#{menu.idioma.frances}"></a>
+          <a class="dropdown-item" th:href="@{/login/wellcome?lang_config=es}" href="#" th:text="#{menu.idioma.espanol}"></a>
+          <a class="dropdown-item" th:href="@{/login/wellcome?lang_config=en}" href="#" th:text="#{menu.idioma.ingles}"></a>
+          <a class="dropdown-item" th:href="@{/login/wellcome?lang_config=fr}" href="#" th:text="#{menu.idioma.frances}"></a>
         </div>
       </li>
     </ul>
@@ -63,6 +63,9 @@
         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
         <button class="btn btn-outline-success" type="submit">Search</button>
       </form>
+      <div>
+        <a th:text="${session.usuario.usuario}" href=""></a>
+      </div>
     </div>
   </div>
 </nav>

@@ -10,6 +10,7 @@
     </style>
     <div th:replace="commons/menu :: menu" />
     <h1 th:text="${User}" th:name="${User}" class="card-title" value=""></h1>
+    <h3 th:text="#{saludar.usuario(${session.usuario.usuario})}"></h3>
     <div th:replace="commons/footer :: footer" />
 </body>
 </html> 
