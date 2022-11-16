@@ -12,7 +12,7 @@
             margin-top: .5em;
         }
     </style>
-    <form action="/clientes/editCliente" method="post">
+    <form th:action="@{/clientes/editCliente}" method="post">
         <div class="mb-6">
             <label for="codigo" class="form-label">Codigo</label>
             <input type="text" class="form-control" id="codigo" name="codigo" th:value="${cliente.codigo}">
