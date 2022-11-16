@@ -31,7 +31,8 @@ public class LoginController {
 
 
     @GetMapping(value = "/signin")
-    public String inicio(Model model) {
+    public String inicio(Model model,HttpSession session) {
+        session.getAttribute("usuario");
         return "signin";
     }
 
@@ -50,5 +51,12 @@ public class LoginController {
         model.addAttribute("usuario", usuario.getUsuario());
         modelAndView.setViewName("login/wellcome");
         return modelAndView;
+    }
+
+    @GetMapping(value = {"/logout"}) 
+    public String logout(HttpSession session) {
+        session.getAttribute("usuario");
+        session.invalidate();
+        return "login/signin";
     }
 }

@@ -12,7 +12,9 @@
             <label for="formGroupExampleInput2" class="form-label">Contraseña</label>
             <input type="text" class="form-control" id="password" placeholder="Introduzca su contraseña" name="password">
           </div>
-          <input type="submit" value="mostrarUsuario" id="botonEnviar">
+          <input type="submit" value="Autenticar" id="botonEnviar">
+          <span th:if="${session.usuario.usuario != null}">usuario</span>
+          <span th:unless="${session.usuario.usuario == null}">sin autentificar</span>
     </form>
 </body>
 </html>
