@@ -6,6 +6,7 @@ import org.springframework.stereotype.Service;
 
 import com.rgarmal.springproject.tienda.dao.ClientesDAO;
 import com.rgarmal.springproject.tienda.model.Cliente;
+import com.rgarmal.springproject.tienda.model.Producto;
 import com.rgarmal.springproject.tienda.services.ClientesServices;
 
 @Service

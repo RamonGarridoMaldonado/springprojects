@@ -7,36 +7,27 @@
   <div th:replace="commons/menu :: menu" />
 <!-- CARDS -->
 
+
 <div class="container">
   <div class="row">
     <div th:each="producto : ${productos}" class="col-3">
       <div class="card" style="width: 18rem;">
-        <img th:src="@{${producto.urlImg}}" src="" class="card-img-top" alt="..." width="200px" height="200px">
         <div class="card-body">
           <h5 th:text="${producto.nombre}" th:name="${producto.nombre}" class="card-title" value="">Card title</h5>
-          <p th:text="${producto.descripcion}" class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a th:href="@{/productos/edit?codigo=}+${producto.codigo}" href="edit.html" class="btn btn-primary">Ver producto</a>
+          <p th:text="${producto.descripcion}" class="card-text"></p>
+          <p th:text="${producto.precio}" class="card-text"></p>
+          <p th:text="${producto.fecha}" class="card-text"></p>
+          <!--<a th:href="@{/productos/edit?codigo=}+${producto.codigo}" href="edit.html" class="btn btn-primary">Ver producto</a>-->
+          <a th:href="@{/productos/modificarProducto?codigo=}+${producto.codigo}" href="modificarProducto.html"  class="btn btn-primary">Modificar producto</a>
+          <a th:href="@{/productos/borrarProducto?codigo=}+${producto.codigo}" href="list.html"  class="btn btn-primary">Borrar producto</a>
         </div>
       </div>
     </div>
   </div>
-
-  <div class="row">
-      <div class="col-12">
-          <nav aria-label="Page navigation example">
-              <ul class="pagination justify-content-center">
-                <li class="page-item"><a class="page-link" href="#">Previous</a></li>
-                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                <li class="page-item"><a class="page-link" href="#">2</a></li>
-                <li class="page-item"><a class="page-link" href="#">3</a></li>
-                <li class="page-item"><a class="page-link" href="#">Next</a></li>
-              </ul>
-            </nav>
-      </div>
-  </div>
 </div>
 
-  <div th:replace="commons/footer :: footer" class="container" />
+<a th:href="@{/productos/nuevoProducto}" href="nuevoProducto.html"  class="btn btn-primary" id="nuevoProducto" >Nuevo producto</a> 
+<div th:replace="commons/footer :: footer" class="container" />
 
 </body>
 </html>

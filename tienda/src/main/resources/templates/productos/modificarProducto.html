@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head th:replace="commons/header :: header" />
+<body>
+    <style>
+        form {
+            width: 20em;
+            margin-left: 2em;
+            margin-top: .8em;
+        }
+        #divCheck, #botonEnviar {
+            margin-top: .5em;
+        }
+    </style>
+    <form action="editProducto" method="post">
+        <div class="mb-6">
+            <label for="codigo" class="form-label">Codigo</label>
+            <input type="text" class="form-control" id="codigo" name="codigo" th:value="${producto.codigo}">
+        </div>
+        <div class="mb-6">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombre" name="nombre" th:value="${producto.nombre}">
+        </div>
+        <div class="mb-6">
+            <label for="descripcion" class="form-label">Descripcion</label>
+            <input type="text" class="form-control" id="descripcion" name="descripcion" th:value="${producto.descripcion}">
+        </div>
+        <div class="mb-6">
+            <label for="precio" class="form-label">Precio</label>
+            <input type="precio" class="form-control" id="precio" name="precio" th:value="${producto.precio}">
+        </div>
+        <div class="mb-6">
+            <label for="fecha" class="form-label">Fecha</label>
+            <input type="fecha" class="form-control" id="fecha" name="fecha" th:value="${producto.fecha}">
+        </div>
+        <div> 
+            <input type="submit" value="modificar producto" id="botonEnviar">
+            <a href="list.html"  class="btn btn-light">Cancelar</a>
+        </div>
+    </form>
+</body>
+</html>

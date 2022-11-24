@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head th:replace="commons/header :: header"/>
+<body>
+    <style>
+        form {
+            width: 20em;
+            margin-left: 2em;
+            margin-top: .8em;
+        }
+        #divCheck, #botonEnviar {
+            margin-top: .5em;
+        }
+    </style>
+    <form action="newProducto" method="post">
+        <div class="mb-6">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombre" name="nombre">
+        </div>
+        <div class="mb-6">
+            <label for="descripcion" class="form-label">Descripcion</label>
+            <input type="text" class="form-control" id="descripcion" name="descripcion">
+        </div>
+        <div class="mb-6">
+            <label for="precio" class="form-label">Precio</label>
+            <input type="precio" class="form-control" id="precio" name="precio">
+        </div>
+        <div class="mb-6">
+            <label for="fecha" class="form-label">Fecha</label>
+            <input type="fecha" class="form-control" id="fecha" name="fecha">
+        </div>
+        <div> 
+            <input type="submit" value="Agregar nuevo producto" id="botonEnviar">
+            <a href="list.html"  class="btn btn-light">Cancelar</a>
+        </div>
+    </form>
+</body>
+</html>

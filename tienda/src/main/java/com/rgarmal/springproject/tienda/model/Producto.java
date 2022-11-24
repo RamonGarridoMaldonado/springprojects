@@ -2,12 +2,16 @@ package com.rgarmal.springproject.tienda.model;
 
 import java.util.Date;
 
+import org.springframework.format.annotation.DateTimeFormat;
+
 public class Producto {
     
     private int codigo;
     private String nombre;
     private String descripcion;
-    private String urlImg;
+    private float precio;
+    
+    @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date fecha;
 
     public Producto() {
@@ -17,18 +21,16 @@ public class Producto {
         this.codigo = codigo;
     }
 
-    public Producto(int codigo, String nombre,String descripcion, String urlImg) {
+    public Producto(int codigo, String nombre,String descripcion) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.descripcion = descripcion;
-        this.urlImg = urlImg;
     }
 
-    public Producto(int codigo, String nombre, String descripcion, String urlImg, Date fecha) {
+    public Producto(int codigo, String nombre, String descripcion, Date fecha) {
         this.codigo = codigo;
         this.nombre = nombre;
         this.descripcion = descripcion;
-        this.urlImg = urlImg;
         this.fecha = fecha;
     }
 
@@ -50,12 +52,7 @@ public class Producto {
     public void setDescripcion(String descripcion) {
         this.descripcion = descripcion;
     }
-    public String getUrlImg() {
-        return urlImg;
-    }
-    public void setUrlImg(String urlImg) {
-        this.urlImg = urlImg;
-    }
+
     public Date getFecha() {
         return fecha;
     }
@@ -83,6 +80,14 @@ public class Producto {
         if (codigo != other.codigo)
             return false;
         return true;
+    }
+
+    public float getPrecio() {
+        return precio;
+    }
+
+    public void setPrecio(float precio) {
+        this.precio = precio;
     }
 
     

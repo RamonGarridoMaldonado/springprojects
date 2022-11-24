@@ -2,6 +2,7 @@ package com.rgarmal.springproject.tienda.services;
 import java.util.List;
 
 import com.rgarmal.springproject.tienda.model.Cliente;
+import com.rgarmal.springproject.tienda.model.Producto;
 
 public interface ClientesServices {
 
