@@ -36,14 +36,11 @@ public class LoginController {
         return "signin";
     }
 
-    @GetMapping(value = {"/wellcome"}) 
-        public String welcome() {
-            return "login/wellcome";
-        }
-
-    @PostMapping(value = {"/wellcome"} )
+    @RequestMapping(value = {"/wellcome"} )
     public ModelAndView guardarUsuario(Model model,LoginUsuario usuario, HttpSession session) {
 
+        usuario = new LoginUsuario();
+        usuario.setUsuario("ramon");
         session.setAttribute("usuario", usuario);
         ModelAndView modelAndView = new ModelAndView();
         String mensaje = messageSource.getMessage("saludar.usuario", new String[]{usuario.getUsuario()}, LocaleContextHolder.getLocale());

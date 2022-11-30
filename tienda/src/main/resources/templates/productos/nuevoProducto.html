@@ -12,7 +12,7 @@
             margin-top: .5em;
         }
     </style>
-    <form action="newProducto" method="post">
+    <form action="newProducto" method="post" enctype="multipart/form-data">
         <div class="mb-6">
             <label for="nombre" class="form-label">Nombre</label>
             <input type="text" class="form-control" id="nombre" name="nombre">
@@ -28,6 +28,10 @@
         <div class="mb-6">
             <label for="fecha" class="form-label">Fecha</label>
             <input type="fecha" class="form-control" id="fecha" name="fecha">
+        </div>
+        <div class="mb-6">
+            <label for="imagenForm" class="form-label">Imagen:</label>
+            <input type="file" class="form-control" id="imagenForm" name="imagenForm">
         </div>
         <div> 
             <input type="submit" value="Agregar nuevo producto" id="botonEnviar">

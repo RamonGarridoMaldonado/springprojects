@@ -3,6 +3,19 @@
 <head th:replace="commons/header :: header" />
 
 <body>
+  <style>
+    img {
+      width: 160px;
+      height: 160px;
+    }
+    #nuevoProducto {
+      margin-top: 3em;
+      width: 100%;
+    }
+    #nuevoProducto:hover {
+      background-color: green;
+    }
+  </style>
 
   <div th:replace="commons/menu :: menu" />
 <!-- CARDS -->
@@ -16,7 +29,8 @@
           <h5 th:text="${producto.nombre}" th:name="${producto.nombre}" class="card-title" value="">Card title</h5>
           <p th:text="${producto.descripcion}" class="card-text"></p>
           <p th:text="${producto.precio}" class="card-text"></p>
-          <p th:text="${producto.fecha}" class="card-text"></p>
+          <p th:text="${#dates.format(producto.fecha,'dd-MMM-yyyy')}" class="card-text"></p>
+          <img th:src="'data:image/jpeg;base64,'+ ${producto.ImageView}" />
           <!--<a th:href="@{/productos/edit?codigo=}+${producto.codigo}" href="edit.html" class="btn btn-primary">Ver producto</a>-->
           <a th:href="@{/productos/modificarProducto?codigo=}+${producto.codigo}" href="modificarProducto.html"  class="btn btn-primary">Modificar producto</a>
           <a th:href="@{/productos/borrarProducto?codigo=}+${producto.codigo}" href="list.html"  class="btn btn-primary">Borrar producto</a>

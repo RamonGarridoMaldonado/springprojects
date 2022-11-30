@@ -4,12 +4,15 @@ import java.util.Date;
 
 import org.springframework.format.annotation.DateTimeFormat;
 
+import com.rgarmal.springproject.tienda.utils.ImageUtil;
+
 public class Producto {
     
     private int codigo;
     private String nombre;
     private String descripcion;
     private float precio;
+    private byte[] imagen;
     
     @DateTimeFormat(pattern = "yyyy-MM-dd")
     private Date fecha;
@@ -90,5 +93,15 @@ public class Producto {
         this.precio = precio;
     }
 
-    
+    public byte[] getImagen() {
+        return imagen;
+    }
+
+    public void setImagen(byte[] imagen) {
+        this.imagen = imagen;
+    }
+
+    public String getImageView() {
+        return ImageUtil.getImgData(this.imagen);
+    }
 }
