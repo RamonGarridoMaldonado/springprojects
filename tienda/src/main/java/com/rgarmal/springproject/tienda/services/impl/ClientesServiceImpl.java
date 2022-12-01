@@ -8,6 +8,8 @@ import com.rgarmal.springproject.tienda.dao.ClientesDAO;
 import com.rgarmal.springproject.tienda.model.Cliente;
 import com.rgarmal.springproject.tienda.model.Producto;
 import com.rgarmal.springproject.tienda.services.ClientesServices;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 
 @Service
 public class ClientesServiceImpl implements ClientesServices{
@@ -16,8 +18,8 @@ public class ClientesServiceImpl implements ClientesServices{
     ClientesDAO clientesDAO;
 
     @Override
-    public List<Cliente> findAll() {
-        return clientesDAO.findAll();
+    public Page<Cliente> findAll(Pageable page) {
+        return clientesDAO.findAll(page);
     }
 
 

@@ -40,6 +40,8 @@
   </div>
 </div>
 
+<div th:replace="commons/pagination :: pagination" />
+
 <a th:href="@{/productos/nuevoProducto}" href="nuevoProducto.html"  class="btn btn-primary" id="nuevoProducto" >Nuevo producto</a> 
 <div th:replace="commons/footer :: footer" class="container" />
 
