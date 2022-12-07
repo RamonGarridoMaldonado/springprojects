@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head th:replace="commons/header :: header"/>
+<body>
+    <style>
+        form {
+            width: 20em;
+            margin-left: 2em;
+            margin-top: .8em;
+        }
+        #divCheck, #botonEnviar {
+            margin-top: .5em;
+        }
+    </style>
+    <form action="newAlumno" method="post">
+        <div class="mb-6">
+            <label for="codigo" class="form-label">codigo</label>
+            <input type="text" class="form-control" id="codigo" name="codigo">
+        </div>
+        <div class="mb-6">
+            <label for="nombre" class="form-label">Nombre</label>
+            <input type="text" class="form-control" id="nombre" name="nombre">
+        </div>
+        <div class="mb-6">
+            <label for="apellidos" class="form-label">apellidos</label>
+            <input type="text" class="form-control" id="apellidos" name="apellidos">
+        </div>
+        <div class="mb-6">
+            <label for="dni" class="form-label">dni</label>
+            <input type="text" class="form-control" id="dni" name="dni">
+        </div>
+        <div class="mb-6">
+            <label for="fecha_nacimiento" class="form-label">fecha_nacimiento</label>
+            <input type="text" class="form-control" id="fecha_nacimiento" name="fecha_nacimiento">
+        </div>
+        <div class="mb-6">
+            <label for="email" class="form-label">email:</label>
+            <input type="text" class="form-control" id="email" name="email">
+        </div>
+        <div class="mb-6">
+            <label for="nuevo" class="form-label">nuevo:</label>
+            <input type="text" class="form-control" id="nuevo" name="nuevo">
+        </div>
+        <div> 
+            <input type="submit" value="Agregar nuevo alumno" id="botonEnviar">
+            <a href="list.html"  class="btn btn-light">Cancelar</a>
+        </div>
+    </form>
+</body>
+</html>

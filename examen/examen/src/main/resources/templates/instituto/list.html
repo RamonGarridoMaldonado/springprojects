@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="commons/header :: header" />
+
+<body>
+  <style>
+    img {
+      width: 160px;
+      height: 160px;
+    }
+    #nuevoProducto {
+      margin-top: 3em;
+      width: 100%;
+    }
+    #nuevoProducto:hover {
+      background-color: green;
+    }
+  </style>
+
+  <div th:replace="commons/menu :: menu" />
+<!-- CARDS -->
+
+<div class="container">
+    <div class="row">
+      <div th:each="alumno : ${alumnos}" class="col-3">
+        <div class="card" style="width: 18rem;">
+          <div class="card-body">
+            <h5 th:text="${alumno.codigo}" th:name="${alumno.codigo}" class="card-title" value="">Card title</h5>
+            <p th:text="${alumno.nombre}" class="card-text"></p>
+            <p th:text="${alumno.apellidos}" class="card-text"></p>
+            <p th:text="${alumno.dni}" class="card-text"></p>
+            <p th:text="${alumno.email}" class="card-text"></p>
+            <p th:text="${alumno.Nuevo}" class="card-text"></p>
+            <a th:href="@{/alumnos/borrarAlumno?codigo=}+${alumno.codigo}" href="list.html"  class="btn btn-primary">Borrar alumno</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+<div th:replace="commons/pagination :: pagination" />
+
+<a th:href="@{/alumnos/nuevoAlumno}" href="nuevoAlumno.html"  class="btn btn-primary" id="nuevoProducto" >Nuevo alumno</a> 
+<div th:replace="commons/footer :: footer" class="container" />
+
+</body>
+</html>
